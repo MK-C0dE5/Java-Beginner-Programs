@@ -4,12 +4,12 @@
 
 Go Ahead! You can run the codes.
 
-Advanced Java - Contains all my advanced java codes.\n
-Contains Following Things\n
-	1. AWT and Swing Component\n
-	2. Applet Programming\n
-	3. Database Query\n
-	4. Client-Server Communication\n
-	5. Socket Programming\n
-	6. RMI
+<p>Advanced Java - Contains all my advanced java codes.</p>
+<p>Contains Following Things</p>
+<p>1. AWT and Swing Component</p>
+<p>2. Applet Programming</p>
+<p>3. Database Query</p>
+<p>4. Client-Server Communication</p>
+<p>5. Socket Programming</p>
+<p>6. RMI</p>
 	
