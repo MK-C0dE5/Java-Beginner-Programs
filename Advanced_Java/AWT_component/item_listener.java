@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-class all_component extends Frame implements ActionListener, ItemListener{
+class item_listener extends Frame implements ActionListener, ItemListener{
         TextField t1;
         TextArea t2;
         Label l3;
@@ -51,6 +51,6 @@ class all_component extends Frame implements ActionListener, ItemListener{
             l4.setText("Java Checkbox: "+(e.getStateChange()==1?"checked":"unchecked"));   
     }
     public static void main(String[] args) {
-        new all_component();
+        new item_listener();
     }
 }
