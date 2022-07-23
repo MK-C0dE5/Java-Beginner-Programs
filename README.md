@@ -12,7 +12,8 @@ Contains Following Things
   <li>Database Query</li>
   <li>Client-Server Communication</li>
   <li>Socket Programming</li>
-  <li>RMI</li>
+  <li>RMI Programs</li>
+  <li>Servlet</li>
 </ul>
 
 	
