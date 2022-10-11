@@ -6,7 +6,7 @@ Go Ahead! You can run the codes.
 <br>
 <br>
 
-><b>Java - Contain all beginner java codes.</b><br>
+<b>Java - Contain all beginner java codes.</b><br>
 
 &emsp;&ensp;Contains Following Things-
 <ul>
@@ -19,7 +19,7 @@ Go Ahead! You can run the codes.
 </ul>
 <br>
 
-><b>Advanced Java - Contains all my advanced java codes.</b><br>
+<b>Advanced Java - Contains all my advanced java codes.</b><br>
 
 &emsp;&ensp;Contains Following Things
 <ul>
