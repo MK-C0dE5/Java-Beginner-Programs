@@ -1,76 +1,60 @@
-import java.util.*;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class _13_matrix {
-    public static void matrix(){
-        Scanner scanner = new Scanner(System.in);
-        
-        System.out.print("Enter the number of rows in the matrix: ");
-        int rows = scanner.nextInt();
 
-        System.out.print("Enter the number of columns in the matrix: ");
-        int columns = scanner.nextInt();
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
 
-        int[][] matrix = new int[rows][columns];
+    System.out.print("Enter the number of rows: ");
+    int rows = scanner.nextInt();
+    System.out.print("Enter the number of columns: ");
+    int columns = scanner.nextInt();
 
-        for(int i=0;i<rows;i++){
-            for(int j=0;j<columns;j++){
-                matrix[i][j] = scanner.nextInt();
-            }
-        }
+    int[][] matrix = new int[rows][columns];
 
-        int[][] transpose = transposematrix(matrix);
-
-        System.out.println("The transpose of the matrix is:");
-        for (int i = 0; i < columns; i++) {
-            for (int j = 0; j < rows; j++) {
-                System.out.print(transpose[i][j] + " ");
-            }
-            System.out.println();
-        }
+    System.out.println("Enter the elements of the matrix:");
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns; j++) {
+        matrix[i][j] = scanner.nextInt();
+      }
     }
 
-    public static int[][] transposematrix(int[][] matrix){
-        int rows = matrix.length;
-        int columns = matrix[0].length;
-        int[][] transpose = new int[columns][rows];
-        
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                transpose[j][i] = matrix[i][j];
-            }
-        }
-        return transpose;
+    System.out.println("Original Matrix:");
+    displayMatrix(matrix);
+
+    int[][] transpose = getTranspose(matrix);
+
+    System.out.println("Transpose Matrix:");
+    displayMatrix(transpose);
+
+    scanner.close();
+  }
+
+  public static int[][] getTranspose(int[][] matrix) {
+    int rows = matrix.length;
+    int columns = matrix[0].length;
+
+    int[][] transpose = new int[columns][rows];
+
+    for (int i = 0; i < columns; i++) {
+      for (int j = 0; j < rows; j++) {
+        transpose[i][j] = matrix[j][i];
+      }
     }
 
-    public void word1(){
-        String file = "DS.txt";
-        try{
-            int count = countword(file);
-            System.out.println("The number of words in the text file is: " + count);
-        }
-        catch (FileNotFoundException e) {
-            System.out.println("File not found: " + file);
-        }
+    return transpose;
+  }
 
+  public static void displayMatrix(int[][] matrix) {
+    int rows = matrix.length;
+    int columns = matrix[0].length;
+
+    for (int i = 0; i < rows; i++) {
+      for (int j = 0; j < columns; j++) {
+        System.out.print(matrix[i][j] + " ");
+      }
+      System.out.println();
     }
-
-    public int countword(String path) throws FileNotFoundException{
-        File file = new File(path);
-        Scanner sc = new Scanner(file);
-
-        int wordcount = 0;
-        while(sc.hasNext()){
-            String line = sc.nextLine();
-            String word[] = line.split(" ");
-            wordcount += word.length;
-        }
-
-        return wordcount;
-    }
-    public static void main(String[] args) {
-        matrix();
-    }
+  }
 }
+

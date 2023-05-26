@@ -1,24 +1,22 @@
-import java.util.*;
-
-class AgeNotWithinRangeException extends Exception{
-    public AgeNotWithinRangeException(String Message){
-        super(Message);
+class AgeNotWithinRangeException extends Exception {
+    public AgeNotWithinRangeException(String message) {
+        super(message);
     }
 }
 
-class NameNotValidException extends Exception{
-    public NameNotValidException(String Message){
-        super(Message);
+class NameNotValidException extends Exception {
+    public NameNotValidException(String message) {
+        super(message);
     }
 }
 
-class student{
+class Student {
     private int rollNo;
     private String name;
     private int age;
     private String course;
 
-    public student(int rollNo, String name, int age, String course) throws AgeNotWithinRangeException, NameNotValidException {
+    public Student(int rollNo, String name, int age, String course) throws AgeNotWithinRangeException, NameNotValidException {
         this.rollNo = rollNo;
 
         if (age < 15 || age > 21) {
@@ -29,13 +27,14 @@ class student{
         if (!isValidName(name)) {
             throw new NameNotValidException("Name contains numbers or special symbols.");
         }
-
         this.name = name;
+
         this.course = course;
     }
+
     private boolean isValidName(String name) {
         return name.matches("[a-zA-Z]+");
-    }        
+    }
 
     public int getRollNo() {
         return rollNo;
@@ -52,18 +51,19 @@ class student{
     public String getCourse() {
         return course;
     }
-
 }
-public class _24_user_exception {
+
+
+public class _24_ExceptionHandling {
     public static void main(String[] args) {
         try {
-            student student1 = new student(1, "John", 19, "Science");
+            Student student1 = new Student(1, "John", 19, "Science");
             System.out.println("Student 1 created: " + student1.getName() + " Roll no. "+ student1.getRollNo()+ " Age: "+student1.getAge());
 
-            student student2 = new student(2, "Jane123", 20, "Math");
+            Student student2 = new Student(2, "Jane123", 20, "Math");
             System.out.println("Student 2 created: " + student2.getName() + " Roll no. "+ student2.getRollNo()+ " Age: "+student2.getAge());
 
-            student student3 = new student(3, "Sam", 22, "English");
+            Student student3 = new Student(3, "Sam", 22, "English");
             System.out.println("Student 2 created: " + student3.getName() + " Roll no. "+ student3.getRollNo()+ " Age: "+student3.getAge());
         
         } catch (AgeNotWithinRangeException e) {

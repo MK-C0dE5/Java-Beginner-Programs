@@ -9,10 +9,6 @@ public class _23_LongestConsecutiveSequence {
         Arrays.sort(nums);
         int longestStreak = 1;
         int currentStreak = 1;
-        System.out.print("Sorted Array: ");
-        for(int i=0; i<nums.length;i++){
-            System.out.print(nums[i] + " ");
-        }
 
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] != nums[i - 1]) {
@@ -20,7 +16,6 @@ public class _23_LongestConsecutiveSequence {
                     currentStreak++;
                 } else {
                     longestStreak = Math.max(longestStreak, currentStreak);
-                    System.out.println(longestStreak);
                     currentStreak = 1;
                 }
             }
