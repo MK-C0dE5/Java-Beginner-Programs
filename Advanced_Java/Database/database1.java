@@ -4,10 +4,8 @@ class database1{
 		try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             System.out.println("Driver Loaded Successfully");
-			String dbUrl ="jdbc:mysql://localhost:3306/ecommerce";
 			String dbUrl ="jdbc:mysql://localhost:3306/apsystem";
 			String username ="root";
-			String password = "khadde";
 			String password = "";
             System.out.println("Database Connected Successfully\n");
 
